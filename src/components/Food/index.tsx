@@ -10,17 +10,19 @@ interface foodsProps {
   description: string,
   price: string,
   image: string,
+  available:boolean,
+
 }
 interface foodProps {
   food: foodsProps,
-  available:boolean,
   handleEditFood:(food:foodsProps) => void ;
   handleDelete: (id:number) => void ;
 
 }
 
 
-export default function Food({available, food, handleEditFood, handleDelete} : foodProps )   {
+export default function Food({ food, handleEditFood, handleDelete} : foodProps )   {
+  const {available} = food
   const [isAvailable, setisAvailable] = useState(available);
 
 
